@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
   resources :examples, except: [:new, :edit]
-  resources :patients, only: [:index]
-  # get '/patients', to: 'patients#index'    SAME AS
+  resources :patients, only: [:index, :show, :create]
+
+  # index (same as get '/patients', to: 'patients#index')
+  # show (same as get '/patients/:id', to: 'patients#show')
 end
