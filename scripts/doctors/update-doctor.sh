@@ -1,4 +1,4 @@
-curl --include --request POST http://localhost:4741/doctors \
+curl --include --request PATCH http://localhost:4741/doctors/3 \
   --header "Content-Type: application/json" \
   --data '{
     "doctor": {

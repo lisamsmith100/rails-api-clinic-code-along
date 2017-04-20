@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+
   post '/sign-up' => 'users#signup'
   post '/sign-in' => 'users#signin'
   delete '/sign-out/:id' => 'users#signout'
@@ -7,8 +8,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
   resources :examples, except: [:new, :edit]
-  resources :patients, only: [:index, :show, :create]
-
+  resources :patients, except: [:new, :edit]
+  resources :doctors, except: [:new, :edit]
+  # resources :patients, only: [:index, :show, :create, :update]
   # index (same as get '/patients', to: 'patients#index')
   # show (same as get '/patients/:id', to: 'patients#show')
 end
