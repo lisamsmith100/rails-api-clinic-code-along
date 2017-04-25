@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :examples, except: [:new, :edit]
   resources :patients, except: [:new, :edit]
   resources :doctors, except: [:new, :edit]
+  resources :appointments, only: [:create, :update, :destroy]
   # resources :patients, only: [:index, :show, :create, :update]
   # index (same as get '/patients', to: 'patients#index')
   # show (same as get '/patients/:id', to: 'patients#show')
