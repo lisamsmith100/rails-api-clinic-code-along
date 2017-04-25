@@ -5,7 +5,7 @@ class Patient < ApplicationRecord
 
   # many-to-many
   has_many :doctors, through: :appointments
-  has_many :appointments
+  has_many :appointments, dependent: :destroy
 
   # validations
   validates :born_on, presence: true
