@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PatientsController < ApplicationController
-  before_action :set_patient, only: [:update, :destroy]
+  before_action :set_patient, only: [:show, :update, :destroy]
 
   # GET /patients
   # GEt /patients.json
@@ -13,7 +13,8 @@ class PatientsController < ApplicationController
   end
 
   def show
-    render json: Patient.find(params[:id])
+    # @patient = Patient.find(params[:id])
+    render json: @patient
   end
 
   def create
@@ -42,10 +43,11 @@ class PatientsController < ApplicationController
     head :no_content
   end
 
+private
   def set_patient
     @patient = Patient.find(params[:id])
   end
-
+# private :set_patient
   def patient_params
     params.require(:patient).permit(:name, :diagnosis, :born_on)
   end
