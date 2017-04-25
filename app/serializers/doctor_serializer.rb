@@ -2,4 +2,5 @@
 
 class DoctorSerializer < ActiveModel::Serializer
   attributes :id, :given_name, :family_name, :specialty, :gender
+  # deleted from end, :family_name, :specialty, :gender
 end
